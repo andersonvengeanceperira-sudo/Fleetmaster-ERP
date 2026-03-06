@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>FleetMaster ERP</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>FleetMaster ERP</h2>
+
+<button onclick="mostrar('dashboard')">Dashboard</button>
+<button onclick="mostrar('veiculos')">Frota</button>
+<button onclick="mostrar('motoristas')">Motoristas</button>
+<button onclick="mostrar('combustivel')">Combustível</button>
+<button onclick="mostrar('manutencao')">Manutenção</button>
+<button onclick="mostrar('licenciamento')">Licenciamento</button>
+
+</div>
+
+<div class="main">
+
+<section id="dashboard">
+
+<h1>Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+<h3>Veículos</h3>
+<p id="totalVeiculos">0</p>
+</div>
+
+<div class="card">
+<h3>Motoristas</h3>
+<p id="totalMotoristas">0</p>
+</div>
+
+<div class="card">
+<h3>Gasto Combustível</h3>
+<p id="totalCombustivel">R$ 0</p>
+</div>
+
+</div>
+
+<canvas id="graficoCombustivel"></canvas>
+
+</section>
+
+<section id="veiculos">
+
+<h1>Cadastro de Veículos</h1>
+
+<form id="formVeiculo">
+
+<input placeholder="Proprietário" id="proprietario">
+
+<input placeholder="Placa" id="placa">
+
+<input placeholder="Modelo" id="modelo">
+
+<input placeholder="Fabricante" id="fabricante">
+
+<input placeholder="Cor" id="cor">
+
+<input placeholder="Base operacional" id="base">
+
+<input placeholder="Renavan" id="renavan">
+
+<input placeholder="Chassi" id="chassi">
+
+<input placeholder="Valor FIPE" id="fipe">
+
+<button type="submit">Salvar</button>
+
+</form>
+
+<table id="tabelaVeiculos">
+<thead>
+<tr>
+<th>Placa</th>
+<th>Modelo</th>
+<th>Fabricante</th>
+<th>Base</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</section>
+
+<section id="motoristas">
+
+<h1>Cadastro de Motoristas</h1>
+
+<form id="formMotorista">
+
+<input placeholder="Nome" id="nome">
+
+<input placeholder="CPF" id="cpf">
+
+<input placeholder="Número CNH" id="cnh">
+
+<input placeholder="Categoria CNH" id="categoria">
+
+<input placeholder="Base operacional" id="baseMotorista">
+
+<input placeholder="Placa veículo" id="veiculoMotorista">
+
+<button type="submit">Salvar</button>
+
+</form>
+
+<table id="tabelaMotoristas">
+<thead>
+<tr>
+<th>Nome</th>
+<th>CPF</th>
+<th>CNH</th>
+<th>Veículo</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</section>
+
+<section id="combustivel">
+
+<h1>Controle de Combustível</h1>
+
+<form id="formCombustivel">
+
+<input type="date" id="dataComb">
+
+<input placeholder="Placa" id="placaComb">
+
+<input placeholder="Modelo" id="modeloComb">
+
+<input placeholder="Fabricante" id="fabricanteComb">
+
+<input placeholder="Combustível" id="combustivelTipo">
+
+<input placeholder="Cidade" id="cidade">
+
+<input placeholder="Base operacional" id="baseComb">
+
+<input placeholder="Litros abastecidos" id="litros">
+
+<input placeholder="Valor total" id="valor">
+
+<input placeholder="Hodômetro" id="hodometro">
+
+<input placeholder="Km percorrido" id="km">
+
+<button type="submit">Salvar</button>
+
+</form>
+
+<table id="tabelaComb">
+<thead>
+<tr>
+<th>Data</th>
+<th>Placa</th>
+<th>Litros</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</section>
+
+<section id="manutencao">
+
+<h1>Manutenção</h1>
+
+<form id="formManut">
+
+<input type="date" id="dataEntrada">
+
+<input type="time" id="horaEntrada">
+
+<input type="date" id="dataSaida">
+
+<input type="time" id="horaSaida">
+
+<input placeholder="Placa" id="placaMan">
+
+<input placeholder="Modelo" id="modeloMan">
+
+<input placeholder="Fabricante" id="fabricanteMan">
+
+<input placeholder="Tipo manutenção" id="tipoMan">
+
+<input placeholder="Oficina" id="oficina">
+
+<input placeholder="Custo total" id="custo">
+
+<button type="submit">Salvar</button>
+
+</form>
+
+<table id="tabelaManut">
+<thead>
+<tr>
+<th>Placa</th>
+<th>Tipo</th>
+<th>Custo</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</section>
+
+<section id="licenciamento">
+
+<h1>Licenciamento / IPVA / Multas</h1>
+
+<form id="formLic">
+
+<input placeholder="Placa" id="placaLic">
+
+<input type="date" id="dataLic">
+
+<input placeholder="Tipo (Licenciamento/IPVA/Multa)" id="tipoLic">
+
+<input placeholder="Valor" id="valorLic">
+
+<button type="submit">Salvar</button>
+
+</form>
+
+<table id="tabelaLic">
+<thead>
+<tr>
+<th>Placa</th>
+<th>Tipo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
